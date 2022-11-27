@@ -1,23 +1,22 @@
-//AFL Task 9
-
-
-// function toSentenceCase(str){
-//     return str.toLowerCase().charAt(0).toUpperCase() + str.slice(1);;
-// }
-
-// console.log(toSentenceCase('the quick brown fox jumps over the lazy dog'));
-  
-
-
-const str = 'the quick brown fox jumps over the lazy dog';
-const str2 = str.charAt(0).toUpperCase() + str.slice(1);
-console.log(str2);
+//AFL Task 10
 
 
 
-
-export function str2 ()
-
-
-  
+const sentenceCase=(str)=>{
+    let sentence=str.split('. ')
+    console.log(sentence)
+    let result=''
+    for (const key in sentence) {
+        let words=sentence[key]
+        if (words.length>0){
+            result+=sentence[key].charAt(0).toUpperCase() + sentence[key].slice(1);
+            if (sentence.length>1 && sentence.indexOf(words) !== -1){
+                result+='. '
+            }
+        }
+        
+    }
+    return result
+}
+module.exports=sentenceCase
 
